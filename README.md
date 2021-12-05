@@ -10,7 +10,7 @@ The design pattern I used is singleto, I put the inventory in the database class
 
 ### Class diagram
 
-![](class diagram.png)
+![](classdiagram.png)
 
 ### Output for Input1
 
