@@ -3,6 +3,7 @@ package com.example;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.io.PrintWriter;
 
 public class main {
 
@@ -105,6 +106,9 @@ public class main {
             }
             total += db.price.get(words[0]);
         }
+        PrintWriter writer = new PrintWriter("output.csv");
+        writer.write("Amount paid, " + total);
+        writer.close();
         System.out.println("Amount paid:" + total);
         sc.close();
 
