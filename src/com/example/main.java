@@ -38,7 +38,7 @@ public class main {
             String words[] = a.split(",");
             db.category.put(words[1], words[0]);
             db.quantity.put(words[1], Integer.parseInt(words[2]));
-            db.price.put(words[1], Double.parseDouble(words[2]));
+            db.price.put(words[1], Double.parseDouble(words[3]));
         }
         sc.close();
 
@@ -104,13 +104,15 @@ public class main {
                 db.CreditCard_Set.add(card);
                 System.out.println("Card:" + card + " Added to the database");
             }
-            total += db.price.get(words[0]);
+            System.out.println(db.price.get(words[0]));
+
+            total += Integer.parseInt(words[1]) * db.price.get(words[0]);
         }
+
+        sc.close();
         PrintWriter writer = new PrintWriter("output.csv");
         writer.write("Amount paid, " + total);
         writer.close();
         System.out.println("Amount paid:" + total);
-        sc.close();
-
     }
 }
